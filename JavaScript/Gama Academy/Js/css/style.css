@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada:wght@300;400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Radio Canada', sans-serif;
+
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+body{
+    background: linear-gradient(to bottom, #ad5389, #3c1053);
+    height: 100vh;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    box-shadow: 1px 1px 10px 1px #3c1053;
+}
+header ul{
+    display: flex;
+
+}
+header ul li{
+    padding: 5px;
+    cursor: pointer;
+
+}
+header ul li a:hover{
+    color: #3c1053;
+
+}
+.container{
+    padding-top: 30px;
+    text-align: center;
+    color: white;
+}
+.container .name h1{
+    font-size: 60px;
+}
+.container .name h5{
+    font-size: 35px;
+}
+#arrow{
+    font-size: 35px;
+    cursor: pointer;
+    animation: blink 1s steps(5,start) infinite;
+}
+@keyframes blink {
+    to{
+        visibility: hidden;
+    }
+}
+#animation{
+    transition: 300ms;
+}
+.rotate{
+    transform: rotate(180deg);
+    transition: 300ms;
+}
+#about p{
+    max-width: 600px;
+    margin: 0 auto;
+}
+.active{
+    display: block !important;
+}
+.form{
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.form input{
+    width:50%;
+    margin: 0 auto;
+    border: none;
+    padding: 5px 10px ;
+    border-radius: 5px 0px 0px 5px;
+}
+.form button{
+    width:15%;
+    padding: 5px 10px ;
+    margin: 0 auto;
+    border: none;
+    background: #3c1053;
+    color: white;
+    border-radius: 0px 5px 5px 0px;
+    margin-left: -5px;
+    cursor: pointer;
+}
+@media only screen and(max-width: 768px) {
+    .form{
+        width: 100%;
+    }
+}
+@media only screen and(max-width: 480px) {
+    .container .name h1{
+        font-size: 30px;
+    }
+    .container .name h5{
+        font-size: 15px;
+    }
+    #about p{
+        max-width: 80%;
+        text-align: justify;
+    }
+}
