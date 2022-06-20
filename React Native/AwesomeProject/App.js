@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Image, Text, View, SafeAreaView } from 'react-native';
+import { StyleSheet, Image, Text, View, SafeAreaView, Pressable} from 'react-native';
 
 const colorGitHub = '#010409';
 const imageProfileGitHub = 'https://avatars.githubusercontent.com/u/65567041?v=4';
@@ -10,9 +10,17 @@ export default function App() {
       <StatusBar backgroundColor = {colorGitHub} barStyle = "light-content" />
     <View style = {styles.content}>
       <Image style = {styles.avatar} source = {{uri: imageProfileGitHub}}/>
-      <Text style = {[styles.text,styles.name]}>Nathália Santiago</Text>
-      <Text style = {[styles.text,styles.nickname]}>nathysanti</Text>
-      <Text style = {[styles.text,styles.description]}>Estudante de Engenharia de Software  | HTML | CSS | JavaScript | #ElasnaTech | Fullstack Developer </Text> 
+      <Text 
+        style = {[styles.text,styles.name]}
+        accessibilityLabel = "Nome: Nathalia Santiago">
+        Nathália Santiago</Text>
+      <Text accessibilityLabel = "Nome de usuario: nathysanti" style = {[styles.text,styles.nickname]}>nathysanti</Text>
+      <Text accessibilityLabel = "Descrição: Estudante de Engenharia de Software  | HTML | CSS | JavaScript | #ElasnaTech | Fullstack Developer" style = {[styles.text,styles.description]}>Estudante de Engenharia de Software  | HTML | CSS | JavaScript | #ElasnaTech | Fullstack Developer </Text> 
+      <View>
+        <Pressable onPress={() => console.log('github') }>
+        <Text style = {styles.button}> Open in GitHub</Text>
+        </Pressable>
+      </View>
     </View>
     </SafeAreaView>
   );
@@ -52,5 +60,11 @@ const styles = StyleSheet.create({
     fontSize:12,
     marginTop:10,
     color:'#878A8D',
+  },
+  button:{
+    backgroundColor: '#787F87',
+    padding:20,
+    marginTop:20,
+    borderRadius:100,
   },
 });
