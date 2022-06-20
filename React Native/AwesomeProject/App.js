@@ -10,9 +10,9 @@ export default function App() {
       <StatusBar backgroundColor = {colorGitHub} barStyle = "light-content" />
     <View style = {styles.content}>
       <Image style = {styles.avatar} source = {{uri: imageProfileGitHub}}/>
-      <Text style = {styles.text}>Nathália Santiago</Text>
-      <Text style = {styles.text}>nathysanti</Text>
-      <Text style = {styles.text}>Estudante de Engenharia de Software  | Hiring Coders#3 | HTML | CSS | JavaScript | #ElasnaTech | Front-End Developer </Text> 
+      <Text style = {[styles.text,styles.name]}>Nathália Santiago</Text>
+      <Text style = {[styles.text,styles.nickname]}>nathysanti</Text>
+      <Text style = {[styles.text,styles.description]}>Estudante de Engenharia de Software  | HTML | CSS | JavaScript | #ElasnaTech | Fullstack Developer </Text> 
     </View>
     </SafeAreaView>
   );
@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
   },
   content: {
     alignItems: 'center',
+    padding: 20,
   },
   avatar:{
     height: 200,
@@ -36,5 +37,20 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 15,
     color: '#ffffff',
+  },
+  name:{
+    fontWeight: 'bold',
+    fontSize: 20,
+    marginTop:20,
+  },
+  nickname:{
+    fontSize:14,
+    color:'#787F87',
+  },
+  description:{
+    fontWeight: 'bold',
+    fontSize:12,
+    marginTop:10,
+    color:'#878A8D',
   },
 });
