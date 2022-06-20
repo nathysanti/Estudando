@@ -1,15 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { StyleSheet, Image, View, SafeAreaView } from 'react-native';
 
 const colorGitHub = '#010409';
+const imageProfileGitHub = 'https://avatars.githubusercontent.com/u/65567041?v=4';
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar backgroundColor = {colorGitHub} barStyle = "light-content" ></StatusBar>
+      <StatusBar backgroundColor = {colorGitHub} barStyle = "light-content" />
     <View >
-      <Text style={styles.text}>Hello World!</Text>
-      <StatusBar style="auto" />
+      <Image style = {styles.avatar} source = {{uri: imageProfileGitHub}}/>
+    
+      
     </View>
     </SafeAreaView>
   );
@@ -22,8 +24,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  text: {
-    fontSize: 30,
-    color: '#fff'
-  },
+  avatar:{
+    height: 200,
+    width: 200,
+    borderRadius: 100,
+  }
 });
+;
