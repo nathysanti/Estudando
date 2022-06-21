@@ -1,10 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Image, Text, View, SafeAreaView, Pressable} from 'react-native';
+import { StyleSheet, Image, Text, View, SafeAreaView, Pressable, Linking} from 'react-native';
 
 const colorGitHub = '#010409';
 const imageProfileGitHub = 'https://avatars.githubusercontent.com/u/65567041?v=4';
+const ulrtoGitHub = 'https://github.com/nathysanti';
 
 export default function App() {
+  const handlePressGotoGitHUb = async () =>{
+    console.log('Verificando Link')
+    const res = await Linking.canOpenURL(ulrtoGitHub);
+    if(res){
+      console.log('Link Aprovado');
+      await Linking.openURL(ulrtoGitHub);
+    }else{
+      console.log('Link não foi aprovado');
+    }
+    
+  }
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor = {colorGitHub} barStyle = "light-content" />
@@ -17,7 +29,7 @@ export default function App() {
       <Text accessibilityLabel = "Nome de usuario: nathysanti" style = {[styles.text,styles.nickname]}>nathysanti</Text>
       <Text accessibilityLabel = "Descrição: Estudante de Engenharia de Software  | HTML | CSS | JavaScript | #ElasnaTech | Fullstack Developer" style = {[styles.text,styles.description]}>Estudante de Engenharia de Software  | HTML | CSS | JavaScript | #ElasnaTech | Fullstack Developer </Text> 
       <View>
-        <Pressable onPress={() => console.log('github') }>
+        <Pressable onPress={handlePressGotoGitHUb}>
         <Text style = {styles.button}> Open in GitHub</Text>
         </Pressable>
       </View>
