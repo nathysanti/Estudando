@@ -2,4 +2,4 @@
 
 Criando o perfil do GitHub
 
-![image](./assets/perfilGitHub.jpg)
+![image] <img src="./assets/perfilGitHub.jpg" width="400" height="790">
