@@ -1,23 +1,29 @@
-import React from "react"
+import React, {useState} from "react"
 import { View, StyleSheet, Image, TouchableOpacity} from "react-native"
 
 
 const App = () =>{
-  const toogle = true;
-  return <View style = {toogle ? style.conteinerLight :style.conteiner}>
-    <TouchableOpacity onPress={() => {}}>
+  
+  const [toggle, setToggle] = useState(false);
 
-    <Image  source={ toogle 
+  const handleChangeLogo = () => setToggle((oldToggle) => {
+      return !oldToggle;
+    });
+
+  return <View style = {toggle ? style.conteinerLight :style.conteiner}>
+    <TouchableOpacity onPress={handleChangeLogo}>
+
+    <Image  source={ toggle 
     ? require('./assets/icons/eco-light.png')
     :  require('./assets/icons/eco-light-off.png')}
     
-    style={toogle ? style.lightingON : style.lightingOff }/>
+    style={toggle ? style.lightingON : style.lightingOff }/>
 
-    <Image  source={ toogle 
+    <Image  source={ toggle 
     ? require('./assets/icons/logo-dio.png')
     :  require('./assets/icons/logo-dio-white.png')}
     
-    style={toogle ? style.lightingON : style.lightingOff }/>  
+    style={toggle ? style.lightingON : style.lightingOff }/>  
     </TouchableOpacity>
   </View>
 }
